@@ -1,38 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contato</title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-  <ul>
+
+<body class="fundo">
+  <ul id="menu">
     <li>
       <a href="index.html">Home</a>
     </li>
+
     <li>
       <a href="contato.html">Contato</a>
     </li>
   </ul>
-  <h3>Entre em Contato Comigo</h3>
-  <form>
-    <label for="nome">Nome: </label><br>
-    <input type="text" name="" id="nome"><br>
 
-    <label for="e-mail">E-mail: </label><br>
-    <input type="email" name="" id="e-mail"><br>
+  <h3 class="center">Entre em Contato Comigo</h3>
 
-    <label for="Assunto">Assunto: </label><br>
-    <textarea name="" id="" cols="40" rows="10"></textarea><br>
-    <button>Enviar</button>
+  <div class="container mb-50">
+    <div>
+      <form>
+        <label for="nome">Nome: </label>
+        <input type="text" name="" id="nome" onkeyup="validaNome()">
+        <div id="txtNome"></div><br>
 
-    <h2>Endereço: </h2>
-    <p>Pontal de Maracaípe</p>
-    <p>Ipojuca - PE</p>
+        <label for="email">E-mail: </label>
+        <input type="email" name="" id="email" onkeyup="validaEmail()">
+        <div id="txtEmail"></div><br>
 
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.7067103084364!2d-35.01122198470962!3d-8.52782873875546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aa91bd92e2829f%3A0x5e177512b95d9436!2sMaracaipe%2C%20Ipojuca%20-%20PE!5e0!3m2!1spt-BR!2sbr!4v1637691401332!5m2!1spt-BR!2sbr" width="450" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <label for="Assunto">Assunto: </label><br>
+        <textarea name="assunto" id="assunto" cols="40" rows="10" onkeyup="validaAssunto()"></textarea>
+        <div id="txtAssunto"></div><br>
+        <button onclick="enviar()">Enviar</button>
+      </form>      
+    </div>
+    
+    <div class="ml-50">
+      <h2>Endereço: </h2>
+      <p>Pontal de Maracaípe</p>
+      <p>Ipojuca - PE</p>
 
-  </form>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.7067103084364!2d-35.01122198470962!3d-8.52782873875546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aa91bd92e2829f%3A0x5e177512b95d9436!2sMaracaipe%2C%20Ipojuca%20-%20PE!5e0!3m2!1spt-BR!2sbr!4v1637691401332!5m2!1spt-BR!2sbr"
+        width="400" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" onmousemove="mapaZoom()" onmouseout="mapaNormal()" id = "mapa"></iframe>
+    </div>
+  </div>
+  <script src="assets/js/script.js"></script>
 </body>
+
 </html>
